@@ -1,6 +1,6 @@
 import React from 'react'
 import { Box, Grid, Typography, Button, makeStyles, colors } from '@material-ui/core'
-import { differenceInDays } from 'date-fns'
+import { differenceInMinutes} from 'date-fns'
 
 
 const useStyles = makeStyles((theme) =>(
@@ -55,7 +55,7 @@ export default (props) => {
                 <Grid item container direction="column" alignItems ="flex-end" xs>
                     <Grid item>
                         <Typography variant="caption">
-                            {differenceInDays (Date.now(),props.postedOn)} days ago | {props.type} | {props.location}
+                            {differenceInMinutes (Date.now(),props.postedOn)} min ago | {props.type} | {props.location}
                         </Typography>
                     </Grid>
                     <Grid item>
@@ -69,3 +69,4 @@ export default (props) => {
         </Box>
         );    
  }
+ 
